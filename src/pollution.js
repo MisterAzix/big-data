@@ -42,7 +42,7 @@ const initPollution = async () => {
                 yAxisID: "y",
             },
             {
-                label: "Moyenne teneur en N02 en µg/m3 par an",
+                label: "Moyenne teneur en N02 (en µg/m3) par an",
                 data: secondDataset,
                 borderColor: "#0000FF",
                 backgroundColor: "rgba(0, 0, 255, 0.5)",
@@ -61,12 +61,6 @@ const initPollution = async () => {
                 intersect: false,
             },
             stacked: false,
-            plugins: {
-                title: {
-                    display: true,
-                    text: "Chart.js Line Chart - Multi Axis",
-                },
-            },
             scales: {
                 y: {
                     type: "linear",
@@ -88,6 +82,64 @@ const initPollution = async () => {
 
     const ctx = document.getElementById("chart_pollution_global");
     const pollutionChart = new Chart(ctx, config);
+
+    const ctxNo2 = document.getElementById("chart_pollution_NO2");
+    const no2Chart = new Chart(ctxNo2, {
+        type: "line",
+        data: {
+            labels: ["Jan", "Fev", "Mar", "Avr", "Mai", "Juin", "Juil", "Aout", "Sept", "Oct", "Nov", "Dec"],
+            datasets: [
+                {
+                    label: "2018",
+                    data: NO2_DATA[0],
+                    backgroundColor: ["rgba(0, 162, 255, 0.4)"],
+                    borderColor: ["rgba(0, 162, 255, 1)"],
+                    borderWidth: 1,
+                    cubicInterpolationMode: "monotone",
+                },
+                {
+                    label: "2019",
+                    data: NO2_DATA[1],
+                    backgroundColor: ["rgba(255, 100, 78, 0.4)"],
+                    borderColor: ["rgba(255, 100, 78, 1)"],
+                    borderWidth: 1,
+                    cubicInterpolationMode: "monotone",
+                },
+                {
+                    label: "2020",
+                    data: NO2_DATA[2],
+                    backgroundColor: ["rgba(97, 216, 54, 0.4)"],
+                    borderColor: ["rgba(97, 216, 54, 1)"],
+                    borderWidth: 1,
+                    cubicInterpolationMode: "monotone",
+                },
+                {
+                    label: "2021",
+                    data: NO2_DATA[3],
+                    backgroundColor: ["rgba(255, 217, 50, 0.4)"],
+                    borderColor: ["rgba(255, 217, 50, 1)"],
+                    borderWidth: 1,
+                    cubicInterpolationMode: "monotone",
+                },
+            ],
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: "Teneur en NO2 (en µg/m3) en fonction des mois des quatres dernières années",
+                },
+            },
+            interaction: {
+                intersect: false,
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+            },
+        },
+    });
 };
 
 initPollution();
