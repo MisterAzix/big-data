@@ -59,7 +59,7 @@
                         la crise sanitaire. La diminution du trafic routier a donc un impact sur la teneur en NO2 dans
                         les villes.
                     </p>
-                    <div id="chart_pollution"></div>
+                    <canvas id="chart_pollution_global" class="w-100" height="300"></canvas>
                     <p>
                         Cependant, d’après nos recherches, l’évolution de la teneur de dioxyde d’azote est aussi
                         étroitement liée aux saisons. On peut observer une baisse significative de la teneur en NO2
@@ -71,6 +71,7 @@
                         NO2 et donc sa dilution dans la couche basse de l’atmosphère et améliore ainsi la qualité de
                         l’air dans les villes.
                     </p>
+                    <canvas id="chart_pollution_NO2" class="w-100"></canvas>
                     <h3>Evolution nombre de véhicules</h3>
                     <p>
                         Bien que les taux de pollution aient évolué de manière très positive dans la métropole, ce n’est
@@ -175,6 +176,9 @@
         <!-- SCRIPT -->
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
         <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
-        <script src="./src/index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+        <script src="./src/utils.js"></script>
+        <script src="./src/pollution.js"></script>
+        <script src="./src/map.js"></script>
     </body>
 </html>

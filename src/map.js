@@ -2,7 +2,7 @@ const TRAFIC_DATA_FILE = "../data/comptage_trafic_2021.json";
 const SENSOR_INFO_FILE = "../data/pc_capte_p.json";
 const STOPS_FILE = "../data/13e7e219-b037-4d60-a3ab-e55d2d3e5291.20220215.120242.484070.zip.geojson";
 
-const init = async () => {
+const initMap = async () => {
     const traficData = await fetchJSON(TRAFIC_DATA_FILE);
     const sensorData = await fetchJSON(SENSOR_INFO_FILE);
 
@@ -21,17 +21,10 @@ const init = async () => {
 
     const filteredData = newtraficData.filter((element) => element?.coordinates !== undefined);
 
-    initMap(filteredData);
+    renderMap(filteredData);
 };
 
-const fetchJSON = async (FILE_PATH) => {
-    const response = await fetch(FILE_PATH);
-    if (!response.ok) return console.error("Fetch failed!");
-    const data = await response.json();
-    return data;
-};
-
-const initMap = (data) => {
+const renderMap = (data) => {
     let map = L.map("map").setView([44.8378, -0.594], 12);
 
     L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
@@ -60,4 +53,4 @@ const initMap = (data) => {
     });
 };
 
-init();
+initMap();
