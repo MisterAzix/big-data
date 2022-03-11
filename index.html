@@ -27,12 +27,13 @@
                     <p>
                         5 tonnes. C’est le chiffre de CO2 par Français en 2019. Dans un monde où l’écologie occupe une
                         place de plus en plus grande, les rejets carbones ne cessent d’augmenter. Le pays est le 73e
-                        mondial, avec 5 tonnes de <span class="fw-bold">CO2</span> par Français en 2019 Aujourd’hui,
-                        l’écologie est donc au coeur des débats. On constate une réelle prise de conscience de la part
-                        de la société qui se caractérise par de nombreux maires écologistes élus. Dans cet article, nous
-                        allons nous intéresser aux aménagements urbains que mettent en place les villes pour réduire la
-                        pollution. Puis, dans un second temps, nous vérifierons l’efficacité de ces solutions par des
-                        données réelles. Pour cela, prenons le cas de Bordeaux.
+                        mondial, avec 5 tonnes de <span class="fw-bold">CO2</span> par Français en 2019.
+
+                        <br />Aujourd’hui, l’écologie est donc au coeur des débats. On constate une réelle prise de
+                        conscience de la part de la société qui se caractérise par de nombreux maires écologistes élus.
+                        Dans cet article, nous allons nous intéresser aux aménagements urbains que mettent en place les
+                        villes pour réduire la pollution. Puis, dans un second temps, nous vérifierons l’efficacité de
+                        ces solutions par des données réelles. Pour cela, prenons le cas de Bordeaux.
                     </p>
                     <br />
                     <h2>Constat</h2>
@@ -71,7 +72,7 @@
                         NO2 et donc sa dilution dans la couche basse de l’atmosphère et améliore ainsi la qualité de
                         l’air dans les villes.
                     </p>
-                    <canvas id="chart_pollution_NO2" class="w-100"></canvas>
+                    <!-- <canvas id="chart_pollution_NO2" class="w-100"></canvas> -->
                     <h3>Evolution nombre de véhicules</h3>
                     <p>
                         Bien que les taux de pollution aient évolué de manière très positive dans la métropole, ce n’est
@@ -97,20 +98,20 @@
                         voitures stagne. Si on corrèle ces données à l’évolution du nombre d’habitants, on voit que la
                         population a tendance à délaisser la voiture pour le vélo.
                     </p>
-                    <div id="chart_vehicules_global"></div>
+                    <canvas id="chart_vehicules_global" class="w-100" height="300"></canvas>
                     <p>
                         Le graphique ci-dessous présente l’évolution de la fréquentation des véhicules sur les
                         principaux axes de Bordeaux Métropole. Les données nous proviennent de l’atelier Open Data de
                         Bordeaux Métropole et les valeurs correspondent au nombre moyen de véhicules par heure aux
                         heures de pointe du matin sur une année.
                     </p>
-                    <div id="chart_vehicules_bike"></div>
+                    <canvas id="chart_vehicules_bike" class="w-100" height="300"></canvas>
                     <p>
                         Le graphique ci-dessous présente l’évolution du nombre moyen de vélos par an sur l’ensemble de
                         la métropole. Les données nous proviennent de l’atelier Open Data de Bordeaux Métropole et les
                         valeurs correspondent au nombre moyen de vélos par an sur base 100 en 2001.
                     </p>
-                    <div id="chart_vehicules_peak"></div>
+                    <canvas id="chart_vehicules_peak" class="w-100" height="300"></canvas>
                     <br />
                     <h2>Solutions</h2>
                     <h3>Stations VCub / Aménagements cyclables</h3>
@@ -179,6 +180,7 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
         <script src="./src/utils.js"></script>
         <script src="./src/pollution.js"></script>
+        <script src="./src/vehicules.js"></script>
         <script src="./src/map.js"></script>
     </body>
 </html>
