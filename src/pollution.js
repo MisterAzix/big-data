@@ -64,7 +64,7 @@ const initPollution = async () => {
             plugins: {
                 title: {
                     display: true,
-                    text: "Chart.js Line Chart - Multi Axis",
+                    text: "Comparaison du trafic routier moyen journalier et de la teneur en dioxyde d'azote (en µg/m3) en fonction des quatre dernières années sur Bordeaux Centre",
                 },
             },
             scales: {
