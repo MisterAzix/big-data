@@ -42,7 +42,7 @@ const initPollution = async () => {
                 yAxisID: "y",
             },
             {
-                label: "Moyenne teneur en N02 (en µg/m3) par an",
+                label: "Moyenne teneur en N02 en µg/m3 par an",
                 data: secondDataset,
                 borderColor: "#0000FF",
                 backgroundColor: "rgba(0, 0, 255, 0.5)",
@@ -61,6 +61,12 @@ const initPollution = async () => {
                 intersect: false,
             },
             stacked: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: "Chart.js Line Chart - Multi Axis",
+                },
+            },
             scales: {
                 y: {
                     type: "linear",
@@ -127,11 +133,8 @@ const initPollution = async () => {
             plugins: {
                 title: {
                     display: true,
-                    text: "Teneur en NO2 (en µg/m3) en fonction des mois des quatres dernières années",
+                    text: "Teneur en NO2 (en µg/m3) en fonction des mois des quatre dernières années",
                 },
-            },
-            interaction: {
-                intersect: false,
             },
             scales: {
                 y: {
