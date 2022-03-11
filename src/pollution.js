@@ -18,7 +18,7 @@ const initPollution = async () => {
 
     const traficData = [traficData2018, traficData2019, traficData2020, traficData2021];
 
-    const firstDataset = traficData.map((data, key) => {
+    const firstDataset = traficData.map((data) => {
         const filteredData = data.filter((item) => item?.fields?.nom_voie?.match(/^Bordeaux/gm));
         const newData = filteredData.filter((item) => item.fields.mjo_val > 0);
         const total = newData.map((item) => item.fields.mjo_val).reduce((prev, curr) => prev + curr, 0);
@@ -29,8 +29,6 @@ const initPollution = async () => {
         const total = year.reduce((prev, curr) => prev + curr, 0);
         return Math.round(total / year.length) || 0;
     });
-
-    console.log(secondDataset);
 
     const labels = ["2017", "2018", "2019", "2020"];
     const data = {
@@ -89,7 +87,7 @@ const initPollution = async () => {
     };
 
     const ctx = document.getElementById("chart_pollution_global");
-    const myChart = new Chart(ctx, config);
+    const pollutionChart = new Chart(ctx, config);
 };
 
 initPollution();
