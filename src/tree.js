@@ -10,7 +10,7 @@ const data = {
             yAxisID: "y",
         },
         {
-            label: "CO2 manquants pour arriver au CO2 emis",
+            label: "CO2 absorbé par les arbres plantés (kg)",
             data: [917500, 150645752],
             backgroundColor: ["rgba(255, 100, 78, 0.4)"],
             borderColor: ["rgba(255, 100, 78, 1)"],
