@@ -30,7 +30,7 @@ const initPollution = async () => {
         return Math.round(total / year.length) || 0;
     });
 
-    const labels = ["2017", "2018", "2019", "2020"];
+    const labels = ["2018", "2019", "2020", "2021"];
     const data = {
         labels: labels,
         datasets: [
